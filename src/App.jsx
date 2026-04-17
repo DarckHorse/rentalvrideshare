@@ -11,6 +11,7 @@ import CheckboxField from "./components/CheckboxField";
 import RecommendationCard from "./components/RecommendationCard";
 import SummaryCard from "./components/SummaryCard";
 import EstimateCard from "./components/EstimateCard";
+import { SeoContent } from "./SeoContent";
 
 function App() {
   const { state, setters, selectedLocation, calculations } =
@@ -327,6 +328,7 @@ function App() {
           />
         </div>
       </div>
+      <SeoContent />
     </PageShell>
   );
 }
