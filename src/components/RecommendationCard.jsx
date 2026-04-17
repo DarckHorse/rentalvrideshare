@@ -7,35 +7,47 @@ function RecommendationCard({
   let badgeClass = "badge gray";
   let summaryClass = "summary gray";
   let badgeText = "Close call";
-  let title = "Recommendation";
-  let message = "Both options are about the same cost.";
+  let title = "Either works";
+  let savings = "Costs are nearly the same";
+  let message =
+    "Verify before booking since small price changes could flip the cheaper option.";
 
   if (rentalWins) {
     badgeClass = "badge green";
     summaryClass = "summary green";
-    badgeText = "Rental comes out cheaper";
+    badgeText = "Rental is cheaper";
     title = "Rent the car";
-    message = `The cheaper option saves about $${difference.toFixed(2)} over the trip.`;
+    savings = `Save about $${difference.toFixed(0)}`;
+    message = "over your trip";
   }
 
   if (rideshareWins) {
     badgeClass = "badge blue";
     summaryClass = "summary blue";
-    badgeText = "Rideshare comes out cheaper";
+    badgeText = "Rideshare is cheaper";
     title = "Use rideshare";
-    message = `The cheaper option saves about $${difference.toFixed(2)} over the trip.`;
+    savings = `Save about $${difference.toFixed(0)}`;
+    message = "over your trip";
   }
 
   if (isTie) {
-    message = "Both options land at nearly the same total cost.";
+    badgeClass = "badge gray";
+    summaryClass = "summary gray";
+    badgeText = "Close call";
+    title = "Either works";
+    savings = "Costs are nearly the same";
+    message =
+      "Verify before booking since parking, surge, or route changes could swing the result.";
   }
 
   return (
     <section className="card">
       <div className={badgeClass}>{badgeText}</div>
+
       <div className={summaryClass}>
         <div className="summary-label">Recommendation</div>
         <div className="summary-title">{title}</div>
+        <div className="summary-savings">{savings}</div>
         <div className="summary-text">{message}</div>
       </div>
     </section>
