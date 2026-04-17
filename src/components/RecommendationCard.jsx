@@ -17,8 +17,7 @@ function RecommendationCard({
     summaryClass = "summary green";
     badgeText = "Rental is cheaper";
     title = "Rent the car";
-    savings = `Save about $${difference.toFixed(0)}`;
-    message = "over your trip";
+    savings = `Save about $${difference.toFixed(0)} over your trip`;
   }
 
   if (rideshareWins) {
@@ -26,8 +25,7 @@ function RecommendationCard({
     summaryClass = "summary blue";
     badgeText = "Rideshare is cheaper";
     title = "Use rideshare";
-    savings = `Save about $${difference.toFixed(0)}`;
-    message = "over your trip";
+    savings = `Save about $${difference.toFixed(0)} over your trip`;
   }
 
   if (isTie) {
